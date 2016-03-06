@@ -9,12 +9,31 @@
 import UIKit
 import Parse
 
-class PhotoFeedViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoFeedViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var posts: [PFObject]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let query = PFQuery(className: "Post")
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        // fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock { (posts: [PFObject]?, error: NSError?) -> Void in
+            if let posts = posts {
+                self.posts = posts
+                self.tableView.reloadData()
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,20 +54,33 @@ class PhotoFeedViewController: UIViewController, UIImagePickerControllerDelegate
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             // Get the image captured by the UIImagePickerController
             let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
             
             // Do something with the images (based on your use case)
             picker.dismissViewControllerAnimated(true, completion: nil)
             let postPhotoNavigationController = self.storyboard?.instantiateViewControllerWithIdentifier("PostPhotoViewController") as! PostPhotoViewController
-            postPhotoNavigationController.pickedImage = editedImage
+            postPhotoNavigationController.pickedImage = originalImage
             self.navigationController!.pushViewController(postPhotoNavigationController, animated: true)
             
     }
 
-    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if posts != nil {
+            return posts!.count
+        }
+        return 0
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as! PostCell
+        cell.swiftouncePost = posts![indexPath.section]
+        cell.selectionStyle = .None
+        return cell
+    }
+
     
     @IBAction func onLogout(sender: AnyObject) {
         PFUser.logOut()
+        self.performSegueWithIdentifier("logoutSegue", sender: nil)
     }
     
     

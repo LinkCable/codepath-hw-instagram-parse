@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		250FEADD256E223D9C528517 /* Pods_Swiftounce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B828CA52B232C4053A2A37 /* Pods_Swiftounce.framework */; };
 		4A1048F11C8CBE6A00BD61C4 /* PostPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1048F01C8CBE6A00BD61C4 /* PostPhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4A1048F41C8CD39800BD61C4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1048F31C8CD39800BD61C4 /* Post.swift */; settings = {ASSET_TAGS = (); }; };
+		4A1048F61C8CE0BF00BD61C4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1048F51C8CE0BF00BD61C4 /* PostCell.swift */; settings = {ASSET_TAGS = (); }; };
 		4A5262771C8A39A30084498A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5262761C8A39A30084498A /* AppDelegate.swift */; };
-		4A5262791C8A39A30084498A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5262781C8A39A30084498A /* ViewController.swift */; };
 		4A52627C1C8A39A30084498A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A52627A1C8A39A30084498A /* Main.storyboard */; };
 		4A52627E1C8A39A30084498A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A52627D1C8A39A30084498A /* Assets.xcassets */; };
 		4A5262811C8A39A30084498A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A52627F1C8A39A30084498A /* LaunchScreen.storyboard */; };
@@ -22,9 +23,10 @@
 		10763B9184F728C7E96704D6 /* Pods-Swiftounce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftounce.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftounce/Pods-Swiftounce.release.xcconfig"; sourceTree = "<group>"; };
 		1AA29B04F1950B6541D7E0B0 /* Pods-Swiftounce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swiftounce.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swiftounce/Pods-Swiftounce.debug.xcconfig"; sourceTree = "<group>"; };
 		4A1048F01C8CBE6A00BD61C4 /* PostPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPhotoViewController.swift; sourceTree = "<group>"; };
+		4A1048F31C8CD39800BD61C4 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		4A1048F51C8CE0BF00BD61C4 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		4A5262731C8A39A30084498A /* Swiftounce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftounce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5262761C8A39A30084498A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A5262781C8A39A30084498A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4A52627B1C8A39A30084498A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A52627D1C8A39A30084498A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A5262801C8A39A30084498A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +56,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4A1048F21C8CD38300BD61C4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4A1048F31C8CD39800BD61C4 /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		4A52626A1C8A39A30084498A = {
 			isa = PBXGroup;
 			children = (
@@ -75,9 +85,9 @@
 		4A5262751C8A39A30084498A /* Swiftounce */ = {
 			isa = PBXGroup;
 			children = (
+				4A1048F21C8CD38300BD61C4 /* Models */,
 				4A56240A1C8A3B670089824D /* View Controllers */,
 				4A5262761C8A39A30084498A /* AppDelegate.swift */,
-				4A5262781C8A39A30084498A /* ViewController.swift */,
 				4A52627A1C8A39A30084498A /* Main.storyboard */,
 				4A52627D1C8A39A30084498A /* Assets.xcassets */,
 				4A52627F1C8A39A30084498A /* LaunchScreen.storyboard */,
@@ -92,6 +102,7 @@
 				4A5624081C8A3B630089824D /* LoginViewController.swift */,
 				4A56240B1C8BB5E70089824D /* PhotoFeedViewController.swift */,
 				4A1048F01C8CBE6A00BD61C4 /* PostPhotoViewController.swift */,
+				4A1048F51C8CE0BF00BD61C4 /* PostCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -227,9 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A1048F61C8CE0BF00BD61C4 /* PostCell.swift in Sources */,
 				4A5624091C8A3B630089824D /* LoginViewController.swift in Sources */,
 				4A56240C1C8BB5E70089824D /* PhotoFeedViewController.swift in Sources */,
-				4A5262791C8A39A30084498A /* ViewController.swift in Sources */,
+				4A1048F41C8CD39800BD61C4 /* Post.swift in Sources */,
 				4A1048F11C8CBE6A00BD61C4 /* PostPhotoViewController.swift in Sources */,
 				4A5262771C8A39A30084498A /* AppDelegate.swift in Sources */,
 			);

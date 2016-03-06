@@ -89,26 +89,30 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="422" id="hKF-3Q-1aC">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="422" id="hKF-3Q-1aC" customClass="PostCell" customModule="Swiftounce" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hKF-3Q-1aC" id="hHN-I4-Wiv">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="421.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wum-TK-fK5">
-                                                    <rect key="frame" x="0.0" y="8" width="320" height="320"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wum-TK-fK5" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="320" id="L3o-MV-auJ"/>
+                                                        <constraint firstAttribute="width" constant="320" id="jHa-CQ-4jM"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxh-hi-1tH">
-                                                    <rect key="frame" x="8" y="336" width="35" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxh-hi-1tH">
+                                                    <rect key="frame" x="8" y="328" width="35" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                     <color key="textColor" red="0.40784313729999999" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFH-RW-u0Z">
-                                                    <rect key="frame" x="8" y="358" width="49" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFH-RW-u0Z">
+                                                    <rect key="frame" x="8" y="351" width="48.5" height="17"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -116,8 +120,25 @@
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DFH-RW-u0Z" secondAttribute="trailing" constant="12" id="AeO-Rn-UIB"/>
+                                                <constraint firstItem="DFH-RW-u0Z" firstAttribute="top" secondItem="Wxh-hi-1tH" secondAttribute="bottom" constant="2" id="PW4-dh-YNh"/>
+                                                <constraint firstItem="wum-TK-fK5" firstAttribute="top" secondItem="hHN-I4-Wiv" secondAttribute="top" id="QCo-Rk-zyk"/>
+                                                <constraint firstAttribute="trailing" secondItem="wum-TK-fK5" secondAttribute="trailing" id="WtR-F5-lq8"/>
+                                                <constraint firstItem="Wxh-hi-1tH" firstAttribute="leading" secondItem="hHN-I4-Wiv" secondAttribute="leading" constant="8" id="bSP-2G-XLW"/>
+                                                <constraint firstItem="DFH-RW-u0Z" firstAttribute="leading" secondItem="hHN-I4-Wiv" secondAttribute="leading" constant="8" id="bpX-vR-2Bu"/>
+                                                <constraint firstAttribute="bottom" secondItem="DFH-RW-u0Z" secondAttribute="bottom" constant="12" id="eSi-wb-O1i"/>
+                                                <constraint firstAttribute="trailing" secondItem="Wxh-hi-1tH" secondAttribute="trailing" constant="8" id="faj-sO-vJJ"/>
+                                                <constraint firstItem="DFH-RW-u0Z" firstAttribute="top" secondItem="Wxh-hi-1tH" secondAttribute="bottom" constant="2" id="iha-RH-E58"/>
+                                                <constraint firstItem="wum-TK-fK5" firstAttribute="leading" secondItem="hHN-I4-Wiv" secondAttribute="leading" id="uEK-8E-AZJ"/>
+                                                <constraint firstItem="Wxh-hi-1tH" firstAttribute="top" secondItem="wum-TK-fK5" secondAttribute="bottom" constant="8" id="uZa-a2-9rr"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="DFH-RW-u0Z" id="6q6-xg-zv5"/>
+                                            <outlet property="postImageView" destination="wum-TK-fK5" id="Del-1P-Fxv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -141,6 +162,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="EdM-fA-Inj" id="haN-VF-xuA"/>
+                        <segue destination="BYZ-38-t0r" kind="modal" identifier="logoutSegue" id="fod-dS-0AV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k6m-0b-mso" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -172,22 +197,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dQ2-tK-4Br">
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="sXP-1j-U8F">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onPost:" destination="rtQ-5G-NWy" id="UIJ-Vi-4cn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="dQ2-tK-4Br"/>
                     <connections>
                         <outlet property="captionTextView" destination="UPF-tb-IbN" id="RcZ-pf-TeG"/>
                         <outlet property="postImageView" destination="sve-cn-gbj" id="KcJ-4W-XW7"/>
+                        <segue destination="uNl-ie-mFW" kind="modal" identifier="postedSegue" id="Wyu-e8-FnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xl-Ww-Bsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="368"/>
+            <point key="canvasLocation" x="1104" y="361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OLh-Wv-94H">
@@ -213,35 +232,11 @@
             </objects>
             <point key="canvasLocation" x="579" y="-328"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="acr-Nd-80G">
-            <objects>
-                <navigationController storyboardIdentifier="PostNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="MVA-as-yHB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="SzK-em-agA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.40784313729999999" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="rtQ-5G-NWy" kind="relationship" relationship="rootViewController" id="95Q-dF-8gE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CgB-2y-IC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1020" y="-328"/>
-        </scene>
     </scenes>
     <resources>
         <image name="photo" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fQQ-hM-hvU"/>
+        <segue reference="Wyu-e8-FnO"/>
     </inferredMetricsTieBreakers>
 </document>
