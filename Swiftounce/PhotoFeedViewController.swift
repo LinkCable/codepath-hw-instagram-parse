@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import ParseUI
 
 class PhotoFeedViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,7 +17,6 @@ class PhotoFeedViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -34,9 +34,9 @@ class PhotoFeedViewController: UIViewController, UIImagePickerControllerDelegate
                 print(error?.localizedDescription)
             }
         }
-    }
 
-    override func didReceiveMemoryWarning() {
+    }
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -67,12 +67,14 @@ class PhotoFeedViewController: UIViewController, UIImagePickerControllerDelegate
         if posts != nil {
             return posts!.count
         }
-        return 0
+        else {
+            return 0
+        }
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PostCell", forIndexPath: indexPath) as! PostCell
-        cell.swiftouncePost = posts![indexPath.section]
+        cell.swiftouncePost = posts![indexPath.row]
         cell.selectionStyle = .None
         return cell
     }

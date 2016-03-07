@@ -62,10 +62,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Nal-ce-y1n"/>
                     <connections>
                         <outlet property="passwordField" destination="JbE-Qc-zcd" id="BRS-Ro-7d9"/>
                         <outlet property="usernameField" destination="Dga-AE-pKV" id="tL1-Jb-APF"/>
-                        <segue destination="uNl-ie-mFW" kind="modal" identifier="loginSegue" id="6wH-aa-OZk"/>
+                        <segue destination="uNl-ie-mFW" kind="push" identifier="loginSegue" id="6wH-aa-OZk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -104,15 +105,8 @@
                                                         <constraint firstAttribute="width" constant="320" id="jHa-CQ-4jM"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wxh-hi-1tH">
-                                                    <rect key="frame" x="8" y="328" width="35" height="21"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <color key="textColor" red="0.40784313729999999" green="0.64313725489999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFH-RW-u0Z">
-                                                    <rect key="frame" x="8" y="351" width="48.5" height="17"/>
+                                                    <rect key="frame" x="8" y="328" width="48.5" height="17"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -122,16 +116,12 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DFH-RW-u0Z" secondAttribute="trailing" constant="12" id="AeO-Rn-UIB"/>
-                                                <constraint firstItem="DFH-RW-u0Z" firstAttribute="top" secondItem="Wxh-hi-1tH" secondAttribute="bottom" constant="2" id="PW4-dh-YNh"/>
                                                 <constraint firstItem="wum-TK-fK5" firstAttribute="top" secondItem="hHN-I4-Wiv" secondAttribute="top" id="QCo-Rk-zyk"/>
                                                 <constraint firstAttribute="trailing" secondItem="wum-TK-fK5" secondAttribute="trailing" id="WtR-F5-lq8"/>
-                                                <constraint firstItem="Wxh-hi-1tH" firstAttribute="leading" secondItem="hHN-I4-Wiv" secondAttribute="leading" constant="8" id="bSP-2G-XLW"/>
                                                 <constraint firstItem="DFH-RW-u0Z" firstAttribute="leading" secondItem="hHN-I4-Wiv" secondAttribute="leading" constant="8" id="bpX-vR-2Bu"/>
                                                 <constraint firstAttribute="bottom" secondItem="DFH-RW-u0Z" secondAttribute="bottom" constant="12" id="eSi-wb-O1i"/>
-                                                <constraint firstAttribute="trailing" secondItem="Wxh-hi-1tH" secondAttribute="trailing" constant="8" id="faj-sO-vJJ"/>
-                                                <constraint firstItem="DFH-RW-u0Z" firstAttribute="top" secondItem="Wxh-hi-1tH" secondAttribute="bottom" constant="2" id="iha-RH-E58"/>
                                                 <constraint firstItem="wum-TK-fK5" firstAttribute="leading" secondItem="hHN-I4-Wiv" secondAttribute="leading" id="uEK-8E-AZJ"/>
-                                                <constraint firstItem="Wxh-hi-1tH" firstAttribute="top" secondItem="wum-TK-fK5" secondAttribute="bottom" constant="8" id="uZa-a2-9rr"/>
+                                                <constraint firstItem="DFH-RW-u0Z" firstAttribute="top" secondItem="wum-TK-fK5" secondAttribute="bottom" constant="8" id="y8l-Nr-lfa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -201,7 +191,7 @@
                     <connections>
                         <outlet property="captionTextView" destination="UPF-tb-IbN" id="RcZ-pf-TeG"/>
                         <outlet property="postImageView" destination="sve-cn-gbj" id="KcJ-4W-XW7"/>
-                        <segue destination="uNl-ie-mFW" kind="modal" identifier="postedSegue" id="Wyu-e8-FnO"/>
+                        <segue destination="uNl-ie-mFW" kind="push" identifier="postedSegue" id="Wyu-e8-FnO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xl-Ww-Bsp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -237,6 +227,6 @@
         <image name="photo" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wyu-e8-FnO"/>
+        <segue reference="6wH-aa-OZk"/>
     </inferredMetricsTieBreakers>
 </document>

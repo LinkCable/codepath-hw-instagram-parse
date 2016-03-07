@@ -27,7 +27,6 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        print(postImageView.image)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
